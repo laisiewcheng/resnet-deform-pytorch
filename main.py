@@ -39,7 +39,7 @@ parser.add_argument('--resume', default='', type=str, metavar='PATH',
 parser.add_argument('-j', '--workers', default=0, type=int, metavar='N',
                     help='number of data loading workers (default: 4)')
 
-parser.add_argument('-b', '--batch-size', default=16, type=int,
+parser.add_argument('-b', '--batch-size', default=8, type=int,
                     metavar='N', help='mini-batch size (default: 128)')
 
 parser.add_argument('--print-freq', '-p', default=50, type=int,
