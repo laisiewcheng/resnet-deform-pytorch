@@ -124,11 +124,12 @@ def main():
     #model = resnet.ResNet50()
     #model = resnet.ResNet18()
     #model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet101', pretrained=False)
-    #if torch.cuda.device_count() > 1:
-        #print("Let's use", torch.cuda.device_count(), "GPUs!")
+    
+    if torch.cuda.device_count() > 1:
+        print("Let's use", torch.cuda.device_count(), "GPUs!")
     # dim = 0 [30, xxx] -> [10, ...], [10, ...], [10, ...] on 3 GPUs
 
-    #model = nn.DataParallel(model)
+    model = nn.DataParallel(model)
     
     
     model = model.to(device)
@@ -281,6 +282,7 @@ def train(train_loader, model, criterion, optimizer, epoch):
         #print("input size: ", input_var.size())
         output = model(input_var) #load input to model
         #print("Output for epoch ", epoch, " is: ", output.size())
+        print("Outside: input size: ", input_var.size(), "    output_size:", output.size())
         
         #calculate loss - compute difference targeted output with actual output (output)
         loss = criterion(output, target_var)
