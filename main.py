@@ -42,7 +42,7 @@ parser.add_argument('-j', '--workers', default=0, type=int, metavar='N',
 parser.add_argument('-b', '--batch-size', default=8, type=int,
                     metavar='N', help='mini-batch size (default: 128)')
 
-parser.add_argument('--print-freq', '-p', default=50, type=int,
+parser.add_argument('--print-freq', '-p', default=100, type=int,
                     metavar='N', help='print frequency (default: 20)')
 
 parser.add_argument('--lr', '--learning-rate', default=0.0001, type=float,
