@@ -39,15 +39,6 @@ class BasicBlock(nn.Module):
         return out
 
 
-"""
-Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1, groups=1, bias=True, padding_mode='zeros')
-
-in_channels (int) – Number of channels in the input image
-
-out_channels (int) – Number of channels produced by the convolution
-
-"""
-
 
 
 '''
