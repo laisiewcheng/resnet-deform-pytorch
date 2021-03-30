@@ -136,7 +136,7 @@ def main():
    
     #print("Using Model DeformNet", file = f)
     #print("Using Model DeformNet")
-    print("Using Model Resnet 101 With Deformable Convolution in conv3_x")
+    print("Using Model Resnet 101 With Deformable Convolution in conv2_x with image size 224 x 224")
     #print("Using Model Plain Resnet 50")  
    
     #can add code to use multi GPU here
@@ -159,6 +159,7 @@ def main():
             datasets.CIFAR10(root = '/media/commlab/TenTB/home/laisc/resnet-deform-pytorch/data', train = True, transform = transforms.Compose([
                     transforms.RandomHorizontalFlip(),
                     transforms.RandomCrop(32, 4),
+                    transforms.Resize(224),
                     transforms.ToTensor(),
                     normalize,
                     ]), download = True),
@@ -169,7 +170,8 @@ def main():
     val_loader = torch.utils.data.DataLoader(
             #datasets.CIFAR10(root = './data', train = False, transform = transforms.Compose([
             datasets.CIFAR10(root = '/media/commlab/TenTB/home/laisc/resnet-deform-pytorch/data', train = False, transform = transforms.Compose([
-                    transforms.ToTensor(),
+             transforms.Resize(224),
+             transforms.ToTensor(),
                     normalize,
                     ])),
         batch_size = 32, shuffle = False,
