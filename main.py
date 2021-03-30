@@ -153,9 +153,10 @@ def main():
                                      std=[0.2023, 0.1994, 0.2010])
     
     #setting for for training dataset
+    #/media/commlab/TenTB/home/laisc/resnet-deform-pytorch/data  
     train_loader = torch.utils.data.DataLoader(
             #datasets.CIFAR10(root = './data', train = True, transform = transforms.Compose([
-            datasets.CIFAR10(root = '/ssd/data/cifar10/data', train = True, transform = transforms.Compose([
+            datasets.CIFAR10(root = '/media/commlab/TenTB/home/laisc/resnet-deform-pytorch/data', train = True, transform = transforms.Compose([
                     transforms.RandomHorizontalFlip(),
                     transforms.RandomCrop(32, 4),
                     transforms.ToTensor(),
@@ -167,7 +168,7 @@ def main():
     #setting for validation dataset
     val_loader = torch.utils.data.DataLoader(
             #datasets.CIFAR10(root = './data', train = False, transform = transforms.Compose([
-            datasets.CIFAR10(root = '/ssd/data/cifar10/data', train = False, transform = transforms.Compose([
+            datasets.CIFAR10(root = '/media/commlab/TenTB/home/laisc/resnet-deform-pytorch/data', train = False, transform = transforms.Compose([
                     transforms.ToTensor(),
                     normalize,
                     ])),
